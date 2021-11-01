@@ -1,10 +1,8 @@
 import React, { useEffect }  from 'react';
 import {
-  StyleSheet,Text,View,TextInput,StatusBar,
-    Keyboard,TouchableWithoutFeedback, 
-    TouchableOpacity,
-    Dimensions} from 'react-native';
-import {LinearGradient} from 'expo-linear-gradient'; 
+  StyleSheet,Text,View,TextInput,
+    Keyboard, 
+    TouchableOpacity} from 'react-native'; 
 import {Icon} from 'react-native-elements';
 import { Button } from 'react-native-elements/dist/buttons/Button';
  
