@@ -3,51 +3,34 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Login from './screens/Login';
+import Home from './screens/Home';
+import SignUp from './screens/SignUp';
 
 
-function LoginScreen({navigation}) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>login Screen</Text>
-      <Button
-        title="Go to Home"
-        onPress={() => navigation.navigate('Home')}
-      />
-    </View>
-  );
-}
-
-function HomeScreen(navigation) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>HomeScreen</Text>
-      <Button
-        title="Go to Login"
-        onPress={() => navigation.navigate('login')}
-      />
-      <Button title="Go back" onPress={() => navigation.goBack()} />
-    </View>
-  );
-}
-
+export default function app({navigation}) {
 const Stack =  createNativeStackNavigator();
-function App() {
   return (
+    <View>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName= "Login">
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
+    <Stack.Navigator initialRouteName='Login'>
+    <Stack.Screen name="Home" component={Home} />
+    <Stack.Screen name="Login" component={Login} />
+    <Stack.Screen name="SignUp" component={SignUp} />
       </Stack.Navigator>
     </NavigationContainer>
+    </View>
   );
 }
-export default App;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
+  body:{ 
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text:{
+    fontSize: 40,
+    fontWeight: 'bold',
+    margin:10,
+  }
 });
